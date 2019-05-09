@@ -4,8 +4,8 @@ const expressWsSetup = require(`express-ws`)
 const sysmin = {
   handler,
   client,
-  addWs: (app) => {
-    const expressWs = expressWsSetup(app)
+  addWs: (app, server) => {
+    const expressWs = expressWsSetup(app, server)
     return expressWs
   },
 }
