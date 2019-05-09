@@ -14,6 +14,10 @@ const IGNORED_HEADERS = [
   `sec-fetch-user`,
   `accept-encoding`,
   `upgrade-insecure-requests`,
+  `x-real-ip`,
+  `x-forwarded-for`,
+  `x-forwarded-proto`,
+  `x-forwarded-port`,
 ]
 
 /* Utils copied fom expressjs/morgan */
@@ -80,6 +84,7 @@ module.exports = (options) => {
           server: options.server,
           request: req._requestID,
           url: req.originalUrl || req.url,
+          secure: req.secure,
           method: req.method,
           responseTime: Number(getResponseTime()),
           time: new Date(),
