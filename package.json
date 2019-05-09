@@ -16,7 +16,7 @@
     "dev:redis": "redis-server",
     "dev": "run-p dev:*",
     "clear": "rimraf build",
-    "build:client": "parcel build --experimental-scope-hoisting --no-source-maps --out-dir build/client --public-url ./ ./src/client/index.html",
+    "build:client": "parcel build --out-dir build/client --public-url ./ ./src/client/index.html",
     "build:serve": "parcel build --no-source-maps --target=node --out-dir build/server ./src/server/*",
     "build": "run-s clear build:*",
     "prepare": "yarn build"
