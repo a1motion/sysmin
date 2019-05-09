@@ -10,8 +10,11 @@ export default class extends Component {
   }
   componentDidMount() {
     const ws = new ReconnectingWebSocket(
-      `ws://${window.location.host}${window.location.pathname}ws`
+      `${window.location.protocol === `https:` ? `wss` : `ws`}://${
+        window.location.host
+      }${window.location.pathname}ws`
     )
+    ws.debug = true
     ws.onmessage = ({ data }) => {
       this.setState((state) => ({
         ...state,
