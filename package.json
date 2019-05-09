@@ -1,6 +1,6 @@
 {
   "name": "sysmin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "build/server/index.js",
   "author": "Connor Love <connor@dotconnor.com>",
   "license": "MIT",
