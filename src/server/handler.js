@@ -84,6 +84,7 @@ module.exports = (options) => {
           server: options.server,
           request: req._requestID,
           url: req.originalUrl || req.url,
+          ip: req._remoteAddress,
           secure: req.secure,
           method: req.method,
           responseTime: Number(getResponseTime()),
