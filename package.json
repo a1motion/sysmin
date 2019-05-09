@@ -1,6 +1,6 @@
 {
   "name": "sysmin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "build/server/index.js",
   "author": "Connor Love <connor@dotconnor.com>",
   "license": "MIT",
@@ -22,10 +22,10 @@
     "publish": "yarn build"
   },
   "dependencies": {
-    "on-finished": "^2.3.0",
-    "on-headers": "^1.0.2",
+    "express-ws": "^4.0.0",
     "nanoid": "^2.0.1",
-    "express-ws": "^4.0.0"
+    "on-finished": "^2.3.0",
+    "on-headers": "^1.0.2"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
