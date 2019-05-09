@@ -19,7 +19,7 @@
     "build:client": "parcel build --experimental-scope-hoisting --no-source-maps --out-dir build/client --public-url ./ ./src/client/index.html",
     "build:serve": "parcel build --no-source-maps --target=node --out-dir build/server ./src/server/*",
     "build": "run-s clear build:*",
-    "publish": "yarn build"
+    "prepare": "yarn build"
   },
   "dependencies": {
     "express-ws": "^4.0.0",
