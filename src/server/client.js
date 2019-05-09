@@ -39,10 +39,7 @@ module.exports = (options) => {
     res.end()
   })
   app.ws(`/ws`, (ws) => {
-    console.log(`connected`)
-    ws.on(`message`, (msg) => {
-      console.log(msg)
-    })
+    ws.on(`message`, (msg) => {})
   })
   app.get(`/`, async (req, res) => {
     const indexFile = path.join(BASE_PATH, `client`, `index.html`)
