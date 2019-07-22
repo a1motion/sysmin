@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "eslint": "5.16.0",
-    "eslint-config-a1motion": "1.2.0",
+    "eslint-config-a1motion": "2.2.1",
     "express": "4.17.1",
     "ioredis": "4.9.5",
     "nodemon": "1.19.1",
