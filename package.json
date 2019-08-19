@@ -38,7 +38,7 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-use-websocket": "0.5.4",
-    "rimraf": "2.6.3"
+    "rimraf": "3.0.0"
   },
   "peerDependencies": {
     "express": "^4.16.4"
