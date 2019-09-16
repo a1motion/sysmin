@@ -5047,10 +5047,10 @@ react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-use-websocket@0.5.4:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/react-use-websocket/-/react-use-websocket-0.5.4.tgz#be942fd6822c7c99e0bacb4e38dfd2ab57454c00"
-  integrity sha512-Ll2fN8diPK7chbHOUtULOfuE5vReQnCNS0GbBnqh2b0RMyi8vSlMg3/+bP7ZFnVK5R6ljzXnKegPleY4aS4bVQ==
+react-use-websocket@0.9.8:
+  version "0.9.8"
+  resolved "https://registry.yarnpkg.com/react-use-websocket/-/react-use-websocket-0.9.8.tgz#0e33911730ca20cfbff7f33de0387b67e42de3a6"
+  integrity sha512-c2pmZwTGA34KlvOpBid3vcEQmTrkZ8fv9iyDsIz/21QCEUuWvgatyGjv9YsLwUeZEYot0h4dwz6Tf0rbdNwFaA==
 
 react@16.8.6:
   version "16.8.6"
