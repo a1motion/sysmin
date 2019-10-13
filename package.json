@@ -21,7 +21,7 @@
     "build": "run-s clear build:*",
     "prepublishOnly": "yarn build",
     "lint": "eslint --format=pretty 'src/**/*.js'",
-    "text": "exit 0;"
+    "test": "exit 0;"
   },
   "dependencies": {
     "express-ws": "^4.0.0",
