@@ -20,7 +20,8 @@
     "build:serve": "parcel build --no-source-maps --target=node --out-dir build/server ./src/server/*",
     "build": "run-s clear build:*",
     "prepublishOnly": "yarn build",
-    "lint": "eslint --format=pretty 'src/**/*.js'"
+    "lint": "eslint --format=pretty 'src/**/*.js'",
+    "text": "exit 0;"
   },
   "dependencies": {
     "express-ws": "^4.0.0",
