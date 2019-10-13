@@ -19,28 +19,35 @@
     "build:client": "parcel build --out-dir build/client --public-url ./ ./src/client/index.html",
     "build:serve": "parcel build --no-source-maps --target=node --out-dir build/server ./src/server/*",
     "build": "run-s clear build:*",
-    "prepare": "yarn build"
+    "prepublishOnly": "yarn build",
+    "lint": "eslint --format=pretty 'src/**/*.js'"
   },
   "dependencies": {
     "express-ws": "^4.0.0",
-    "nanoid": "^2.0.3",
+    "nanoid": "^2.1.3",
     "on-finished": "^2.3.0",
     "on-headers": "^1.0.2"
   },
   "devDependencies": {
-    "eslint": "5.16.0",
-    "eslint-config-a1motion": "1.2.0",
-    "express": "4.17.1",
-    "ioredis": "4.9.5",
-    "nodemon": "1.19.1",
-    "npm-run-all": "4.1.5",
-    "parcel-bundler": "1.12.3",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "react-use-websocket": "0.5.4",
-    "rimraf": "2.6.3"
+    "@a1motion/nodemon": "^2.0.2",
+    "babel-eslint": ">=10.0.2",
+    "eslint": ">=5.12.1",
+    "eslint-config-a1motion": "3.1.0",
+    "eslint-config-prettier": ">=6.0.0",
+    "eslint-formatter-pretty": "^2.1.1",
+    "eslint-plugin-prettier": ">=3.1.0",
+    "eslint-plugin-react": "^7.16.0",
+    "express": "^4.17.1",
+    "ioredis": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.4",
+    "prettier": ">=1.17.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-use-websocket": "^0.9.8",
+    "rimraf": "^3.0.0"
   },
   "peerDependencies": {
-    "express": "^4.16.4"
+    "express": ">=4.16.4"
   }
 }

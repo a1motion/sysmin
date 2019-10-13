@@ -1,6 +1,6 @@
-import onHeaders from "on-headers"
-import onFinished from "on-finished"
-import nanoid from "nanoid"
+import onHeaders from "on-headers";
+import onFinished from "on-finished";
+import nanoid from "nanoid";
 
 const IGNORED_HEADERS = [
   `dnt`,
@@ -18,7 +18,7 @@ const IGNORED_HEADERS = [
   `x-forwarded-for`,
   `x-forwarded-proto`,
   `x-forwarded-port`,
-]
+];
 
 /* Utils copied fom expressjs/morgan */
 function getip(req) {
@@ -27,57 +27,62 @@ function getip(req) {
     req._remoteAddress ||
     (req.connection && req.connection.remoteAddress) ||
     undefined
-  )
+  );
 }
+
 function recordStartTime() {
-  this._startAt = process.hrtime()
-  this._startTime = new Date()
+  this._startAt = process.hrtime();
+  this._startTime = new Date();
 }
+
 function headersSent(res) {
   return typeof res.headersSent !== `boolean`
     ? Boolean(res._header)
-    : res.headersSent
+    : res.headersSent;
 }
 
 module.exports = (options) => {
   if (!options || !options.client) {
-    throw new Error(`No Redis Client Attached`)
+    throw new Error(`No Redis Client Attached`);
   }
-  options.key = options.key || `SYSMIN_DEV`
-  options.server = options.server || nanoid()
+
+  options.key = options.key || `SYSMIN_DEV`;
+  options.server = options.server || nanoid();
   return (req, res, next) => {
-    req._requestID = nanoid()
+    req._requestID = nanoid();
     /* basic req/res timings & meta data from expressjs/morgan */
-    req._startAt = undefined
-    req._startTime = undefined
-    req._remoteAddress = getip(req)
+    req._startAt = undefined;
+    req._startTime = undefined;
+    req._remoteAddress = getip(req);
 
-    res._startAt = undefined
-    res._startTime = undefined
+    res._startAt = undefined;
+    res._startTime = undefined;
 
-    recordStartTime.call(req)
+    recordStartTime.call(req);
     const getResponseTime = () => {
       if (!req._startAt || !res._startAt) {
         // missing request and/or response start time
-        return -1
+        return -1;
       }
 
       // calculate diff
       const ms =
         (res._startAt[0] - req._startAt[0]) * 1e3 +
-        (res._startAt[1] - req._startAt[1]) * 1e-6
+        (res._startAt[1] - req._startAt[1]) * 1e-6;
 
       // return truncated value
-      return ms.toFixed(3)
-    }
+      return ms.toFixed(3);
+    };
+
     function logRequest() {
       if (req.SYSMIN_SKIP) {
-        return
+        return;
       }
-      const reqHeaders = Object.assign({}, req.headers)
+
+      const reqHeaders = Object.assign({}, req.headers);
       IGNORED_HEADERS.forEach((header) => {
-        reqHeaders[header] = undefined
-      })
+        reqHeaders[header] = undefined;
+      });
       options.client.publish(
         options.key,
         JSON.stringify({
@@ -97,11 +102,11 @@ module.exports = (options) => {
             headers: res.getHeaders(),
           },
         })
-      )
+      );
     }
 
-    onHeaders(res, recordStartTime)
-    onFinished(res, logRequest)
-    next()
-  }
-}
+    onHeaders(res, recordStartTime);
+    onFinished(res, logRequest);
+    next();
+  };
+};

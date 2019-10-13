@@ -1,29 +1,29 @@
-import React, { Component } from "react"
-import { ReconnectingWebSocket } from "./utils/ReconnectingWebsocket"
+import React, { Component } from "react";
+import { ReconnectingWebSocket } from "./utils/ReconnectingWebsocket";
 
-export default class extends Component {
+export default class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       messages: [],
-    }
+    };
   }
   componentDidMount() {
     const ws = new ReconnectingWebSocket(
       `${window.location.protocol === `https:` ? `wss` : `ws`}://${
         window.location.host
       }${window.location.pathname}ws`
-    )
-    ws.debug = true
+    );
+    ws.debug = true;
     ws.onmessage = ({ data }) => {
       this.setState((state) => ({
         ...state,
         messages: [JSON.parse(data), ...state.messages],
-      }))
-    }
+      }));
+    };
   }
   render() {
-    const { messages } = this.state
+    const { messages } = this.state;
     return (
       <div>
         {messages.map((message) => (
@@ -32,6 +32,6 @@ export default class extends Component {
           </pre>
         ))}
       </div>
-    )
+    );
   }
 }

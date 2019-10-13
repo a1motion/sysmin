@@ -1,5 +1,5 @@
 {
   "extends": [
-    "a1motion"
+    "a1motion/react"
   ]
 }
