@@ -45,7 +45,7 @@
     "prettier": ">=1.17.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-use-websocket": "^0.9.8",
+    "react-use-websocket": "^1.1.0",
     "rimraf": "^3.0.0"
   },
   "peerDependencies": {
